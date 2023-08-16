@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:GroupAssignmentMAPP.Controls"
+             mc:Ignorable="d"
+             BackgroundColor="{StaticResource BgColor}"
+             x:Class="GroupAssignmentMAPP.AboutPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="20,0,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="back.png" Grid.Column="0" Aspect="AspectFit" HeightRequest="27" WidthRequest="27" VerticalOptions="Center" HorizontalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Style="{StaticResource LabelTitleStyle}" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Tipsy Tomato Pizzeria"/>
+            </Grid>
+            <Image Source="splash.png"  Margin="20,20,20,0" Aspect="AspectFit" WidthRequest="200" Grid.Row="1" VerticalOptions="Start" HorizontalOptions="Center"/>
+            <Label Text="Tipsy Tomato Pizzeria is the UK’s leading pizza brand providing you with the tastiest pizza. Our vision is simple. We want to be the favourite food delivery and collection brand, with pizza at its heart. love.
+                            For customers, this means going above and beyond on quality and great value. We aim to innovate and consistently deliver a better food experience, while bringing people together to share in their love for Tipsy Tomato Pizzeria." Grid.Row="2" FontFamily="{StaticResource Avo}" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Created By: Aaliyah Mahmed and Kalthum Mohammed" Grid.Row="3" FontFamily="{StaticResource Avo}" FontAttributes="Bold" HorizontalOptions="Center" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GroupAssignmentMAPP.CheckoutHistory"
+             BackgroundImageSource="bg2.png">
+
+    <NavigationPage.TitleView>
+        <!--Adding account button on navigation bar-->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="My Cart"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   TextColor="White"/>
+            <Button x:Name="btnAbout" 
+                    Text="About" TextColor="White" 
+                    HorizontalOptions="End" 
+                    VerticalOptions="CenterAndExpand" 
+                    Clicked="btnAbout_Clicked"
+                    BackgroundColor="Transparent" 
+                    BorderColor="Transparent"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView Padding="0, 40, 0, 0">
+                <ListView x:Name="MyCartView" ItemSelected="MyCartView_ItemSelected" RowHeight="100" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BorderColor="Black" BackgroundColor="White" CornerRadius="5" Padding="10">
+                                    <StackLayout>
+                                        <!--Displaying Pizza name and ingredients-->
+                                        <Label FontSize="18" FontAttributes="Bold" Text="{Binding Name}" TextColor="Gray"/>
+                                        <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill" />
+                                        <Label FontSize="14" Text="{Binding Ingredients}" TextColor="Gray"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <!--Checkout button-->
+                <Button Text="Back" x:Name="btnBack" Clicked="btnBack_Clicked" BackgroundColor="DarkCyan" TextColor="White"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

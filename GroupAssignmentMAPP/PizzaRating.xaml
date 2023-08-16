@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:GroupAssignmentMAPP.Controls"
+             mc:Ignorable="d"
+             BackgroundColor="{StaticResource BgColor}"
+             x:Class="GroupAssignmentMAPP.PizzaRating">
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="How would you rate this pizza?" FontFamily="{StaticResource Avo}" TextColor="White"  BackgroundColor="{StaticResource AccentColor}" FontSize="Large" FontAttributes="Bold" />
+
+            <Grid Grid.Row="1" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="star_empty.png" Grid.Column="0" x:Name="star1" ClassId="1" HeightRequest="30" WidthRequest="30" 
+               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStarTapped" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="star_empty.png" Grid.Column="1" x:Name="star2" ClassId="2" HeightRequest="30" WidthRequest="30" 
+               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStarTapped" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="star_empty.png" Grid.Column="2" x:Name="star3" ClassId="3" HeightRequest="30" WidthRequest="30" 
+               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStarTapped" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="star_empty.png" Grid.Column="3" x:Name="star4" ClassId="4" HeightRequest="30" WidthRequest="30" 
+               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStarTapped" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="star_empty.png" Grid.Column="4" x:Name="star5" ClassId="5" HeightRequest="30" WidthRequest="30" 
+               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStarTapped" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Frame HasShadow="True" Grid.Row="2" IsClippedToBounds="True" Margin="20,20,20,0" HeightRequest="150" CornerRadius="30" Padding="0" >
+                <controls:CustomEntry Placeholder="Enter your feedback" x:Name="txtFeedbackEntry" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="{StaticResource TextColor}" HeightRequest="150" VerticalOptions="FillAndExpand" Image="lock" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+            </Frame>
+            <Frame HasShadow="True" Grid.Row="3" IsClippedToBounds="True" Margin="20,20,20,0" HeightRequest="60" CornerRadius="30" Padding="0">
+                <Button Text="Submit" x:Name="btnSubmit" Clicked="OnSubmitClicked" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White"  BackgroundColor="{StaticResource AccentColor}"/>
+            </Frame>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

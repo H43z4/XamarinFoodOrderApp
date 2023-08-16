@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxingcommon="clr-namespace:ZXing.Common;assembly=zxing"
+             mc:Ignorable="d"
+             BackgroundColor="{StaticResource BgColor}"
+             x:Class="GroupAssignmentMAPP.CheckoutSuccess"> <!--Adding background-->
+    <NavigationPage.TitleView> <!--About button-->
+        <Button x:Name="btnAbout" Text="About" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White" HorizontalOptions="End" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="btnAbout_Clicked"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="CenterAndExpand" Margin="20,50,20,20" Spacing="50">
+                <Frame BackgroundColor="Gray">
+                <StackLayout> <!--Displaying successful checkout-->
+                    <Image Margin="0,10,0,0" HeightRequest="80" Source="paymentSuccess.png" WidthRequest="70" />
+                        <Label Margin="0,40,0,0" TextColor="White" Style="{StaticResource LabelTitleStyle}" FontSize="Large" Text="PAYMENT SUCCESS" HorizontalOptions="Center" FontAttributes="Bold" />
+                        <Label Margin="17,8" TextColor="White" Style="{StaticResource LabelTitleStyle}" FontSize="Medium" Text="Thank you for your payment. An automated payment receipt will be sent to your registered email or address." HorizontalTextAlignment="Center" />
+                    <!--Displaying Barcode with pizza details-->
+                    <zxing:ZXingBarcodeImageView x:Name="Barcode" BarcodeValue="Hi!" WidthRequest="170" HeightRequest="170">
+                        <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                            <zxingcommon:EncodingOptions Height="170" Width="170" />
+                        </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    </zxing:ZXingBarcodeImageView>
+                    <!--Showing current delivery type-->
+                        <Label Margin="17,8" x:Name="lblDeliveryType" Style="{StaticResource LabelTitleStyle}" TextColor="White" FontSize="Medium" Text="Delivery Type:" HorizontalTextAlignment="Center" />
+                    <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="3" Spacing="20" >
+                            <Button x:Name="PizzaRating" FontFamily="{StaticResource Avo}" Clicked="PizzaRating_Clicked" Text="Rate This Pizza" TextColor="White" HeightRequest="50" 
+                                CornerRadius="300" BackgroundColor="{StaticResource AccentColor}" VerticalOptions="End"/>
+                    </StackLayout>
+                </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

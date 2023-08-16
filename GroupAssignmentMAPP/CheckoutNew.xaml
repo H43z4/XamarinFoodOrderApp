@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:GroupAssignmentMAPP.Controls"
+             mc:Ignorable="d"
+             BackgroundColor="{StaticResource BgColor}"
+             x:Class="GroupAssignmentMAPP.CheckoutNew">
+    <NavigationPage.TitleView>
+        <Button x:Name="btnAbout" Text="About" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White" HorizontalOptions="End" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="btnAbout_Clicked"/>
+    </NavigationPage.TitleView>
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Delivery"> <!--Adding background image-->
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource LabelTitleStyle}" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Tipsy Tomato Pizzeria"/>
+                </Grid>
+                <Image Source="splash.png"  Margin="20,20,20,0" Aspect="AspectFit" WidthRequest="200" Grid.Row="1" VerticalOptions="Start" HorizontalOptions="Center"/>
+                <Label x:Name="lblDel" Text="Please Enter Details" Grid.Row="2" FontFamily="{StaticResource Avo}" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Frame HasShadow="True" Grid.Row="3" IsClippedToBounds="True" x:Name="frmFirstname" Margin="20,20,20,0" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <controls:CustomEntry Placeholder="First Name" x:Name="txtFirstname" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="person" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                </Frame>
+                <Frame HasShadow="True" Grid.Row="4" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmSurname" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <controls:CustomEntry Placeholder="Surname" x:Name="txtSurname" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="person" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                </Frame>
+                <Frame HasShadow="True" Grid.Row="5" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmAddress" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <controls:CustomEntry Placeholder="Address" x:Name="txtAddress" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="person" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                </Frame>
+                <Frame HasShadow="True" Grid.Row="6" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmContactNumber" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <controls:CustomEntry Placeholder="ContactNumber" x:Name="txtContactNumber"  Keyboard="Telephone" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="person" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                </Frame>
+                <Frame HasShadow="True" Grid.Row="9" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmEmail" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <controls:CustomEntry Placeholder="Email" x:Name="txtEmail" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="lock" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                </Frame>
+                <Frame HasShadow="True" Grid.Row="10" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmCheckout" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <Button Text="Checkout" x:Name="btnCheckoutDelivery" Clicked="btnCheckoutDelivery_Clicked" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White"  BackgroundColor="{StaticResource AccentColor}"/>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </ContentPage>
+    <ContentPage Title="Takeaway"> <!--Adding background image-->
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="back.png" Grid.Column="0" Aspect="AspectFit" HeightRequest="27" WidthRequest="27" VerticalOptions="Center" HorizontalOptions="Start">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Style="{StaticResource LabelTitleStyle}" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Tipsy Tomato Pizzeria"/>
+                </Grid>
+                <Image Source="splash.png"  Margin="20,20,20,0" Aspect="AspectFit" WidthRequest="200" Grid.Row="1" VerticalOptions="Start" HorizontalOptions="Center"/>
+                <Label x:Name="lblDel2" Text="Please Enter Details" Grid.Row="2" FontFamily="{StaticResource Avo}" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Frame HasShadow="True" Grid.Row="3" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmFirstname2" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <controls:CustomEntry Placeholder="First Name" x:Name="txtFirstname2" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="person" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                </Frame>
+                <Frame HasShadow="True" Grid.Row="4" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmSurname2" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <controls:CustomEntry Placeholder="Surname" x:Name="txtSurname2" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="person" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                </Frame>
+                <Frame HasShadow="True" Grid.Row="5" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmEmail2" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <controls:CustomEntry Placeholder="Email" x:Name="txtEmail2" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="lock" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                </Frame>
+                <Frame HasShadow="True" Grid.Row="6" IsClippedToBounds="True" Margin="20,20,20,0" x:Name="frmCheckoutTakeaway" HeightRequest="60" CornerRadius="30" Padding="0">
+                    <Button Text="Checkout" x:Name="btnCheckoutTakeaway" Clicked="btnCheckoutTakeaway_Clicked" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White"  BackgroundColor="{StaticResource AccentColor}"/>
+                </Frame>
+            </Grid>
+        </ScrollView>
+
+    </ContentPage>
+</TabbedPage>

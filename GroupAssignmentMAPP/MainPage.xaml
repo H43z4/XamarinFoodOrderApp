@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:GroupAssignmentMAPP.Controls"
+             mc:Ignorable="d"
+             BackgroundColor="{StaticResource BgColor}"
+             x:Class="GroupAssignmentMAPP.MainPage">
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="Gray" Padding="0,20,0,20">
+                <Label Style="{StaticResource LabelTitleStyle}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Tipsy Tomato Pizzeria"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <controls:CustomEntry Placeholder="Search Pizzas!                           " x:Name="txtSearch" BorderColor="White" BackgroundColor="White" FontFamily="{StaticResource Avo}" FontSize="15" TextColor="{StaticResource TextColor}" HeightRequest="60" Image="mail" ImageAlignment="Left" ImageWidth="15" ImageHeight="15" CornerRadius="30" IsCurvedCornersEnabled="True"/>
+                <Button Text="Search" x:Name="btnSearch" Clicked="btnSearch_Clicked" FontFamily="{StaticResource Avo}" TextColor="White"  BackgroundColor="{StaticResource AccentColor}"/>
+            </StackLayout>
+
+            <ListView x:Name="MyListView" ItemSelected="MyListView_ItemSelected" HeightRequest="200" RowHeight="50" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="Gray" BackgroundColor="Gray" CornerRadius="5" Padding="10">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                    <!--Displaying Pizza Details-->
+                                    <Image Source="{Binding Image}" HorizontalOptions="Start" AbsoluteLayout.LayoutBounds="0, 0, 400, 50" Aspect="AspectFill"/>
+                                    <StackLayout>
+                                        <Label FontAttributes="Bold" Style="{StaticResource LabelTitleStyle}" FontSize="18" Text="{Binding Name}" TextColor="Black" Padding="5,20,0,20"/>
+                                        <BoxView Color="White" HeightRequest="1" HorizontalOptions="Fill" />
+                                        <Label FontSize="14" Style="{StaticResource LabelTitleStyle}" Text="{Binding Ingredients}" TextColor="Black" Padding="0,20,0,0"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="End" Padding="0,5,0,5">
+                <!--Buttons for various operations-->
+                <Button Text="Account" HorizontalOptions="StartAndExpand" x:Name="btnAccount" Clicked="btnAccount_Clicked" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White"  BackgroundColor="{StaticResource AccentColor}"/>
+                <Button Text="Logout" HorizontalOptions="StartAndExpand" x:Name="btnLogout" Clicked="btnLogout_Clicked" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White"  BackgroundColor="{StaticResource AccentColor}"/>
+                <Button Text="View Cart" HorizontalOptions="EndAndExpand" x:Name="btnViewCart" Clicked="btnViewCart_Clicked" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White"  BackgroundColor="{StaticResource AccentColor}"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+
+
+

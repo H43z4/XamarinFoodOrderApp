@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:GroupAssignmentMAPP.Controls"
+             mc:Ignorable="d"
+             BackgroundColor="{StaticResource BgColor}"
+             x:Class="GroupAssignmentMAPP.CartPage">
+    
+    <NavigationPage.TitleView> <!--Adding account button on navigation bar-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                   Text="My Cart"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   FontFamily="{StaticResource Avo}"
+                   TextColor="White"/>
+            <Button Grid.Column="1"
+                    x:Name="btnAbout" 
+                    Text="About" 
+                    TextColor="White" 
+                    FontFamily="{StaticResource Avo}"
+                    Clicked="btnAbout_Clicked"
+                    BackgroundColor="Transparent" 
+                    BorderColor="Transparent"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="0" Padding="0, 40, 0, 0">
+                <ListView x:Name="MyCartView" ItemSelected="MyCartView_ItemSelected" RowHeight="100" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BorderColor="Black" BackgroundColor="White" CornerRadius="5" Padding="10">
+                                    <StackLayout>
+                                        <Label FontSize="18" Style="{StaticResource LabelTitleStyle}" FontAttributes="Bold" Text="{Binding Name}" TextColor="Gray"/>
+                                        <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill" />
+                                        <Label FontSize="14" Style="{StaticResource LabelTitleStyle}" Text="{Binding Ingredients}" TextColor="Gray"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+            <Frame Grid.Row="1" BackgroundColor="White" BorderColor="White" Opacity="0.9">
+                <StackLayout>
+                    <Label FontSize="30" Style="{StaticResource LabelTitleStyle}" x:Name="lblSubTotal" TextColor="Gray"/>
+                    <Label FontSize="30" Style="{StaticResource LabelTitleStyle}" x:Name="lblVAT" TextColor="Gray"/>
+                    <Label FontAttributes="Bold" Style="{StaticResource LabelTitleStyle}" FontSize="30" x:Name="lblGrandTotal" TextColor="Gray"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Grid.Row="2" VerticalOptions="EndAndExpand">
+            <Button Text="Checkout" x:Name="btnCheckout" Clicked="btnCheckout_Clicked" FontFamily="{StaticResource Avo}" FontSize="18" TextColor="White"  BackgroundColor="{StaticResource AccentColor}"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
